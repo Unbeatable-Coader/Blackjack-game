@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Challenge 5: Blackjack</h2>
+        <h3><span id="blackjackresult">Let's Play</span></h3>
+
+        <div class="flex-helper">
+            <div class="yourbox" id="yourbox">
+                <h2>You: <span id="yourScore">0</span></h2>
+            </div>
+
+            <div class="dealerbox" id="dealerbox">
+                <h2>Dealer: <span id="dealerScore">0</span></h2>
+            </div>
+        </div>
+        <div class="flex-2">
+            <div class="btns">
+                <button class="btn-1" id="hit">Hit</button>
+                <button class="btn-2" id="stand">Stand</button>
+                <button class="btn-3" id="deal">Deal</button>
+            </div>
+        </div>  
+        <div class="flex-3">
+          <table class="table">
+              <tr>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Draws</th>
+              </tr>
+              <tr>
+                  <td><span id="wins">0</span></td>
+                  <td><span id="losses">0</span></td>
+                  <td><span id="draws">0</span></td>
+              </tr>
+          </table>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

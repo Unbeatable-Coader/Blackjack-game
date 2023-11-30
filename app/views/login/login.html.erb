@@ -1,0 +1,60 @@
+<% if flash.any? %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %> text-center">
+    <%= msg %>
+  </div>
+<% end %>
+<% end %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log In</title>
+  <style>
+    body {
+      background-color: #ccf0dc;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .login-container {
+      margin: auto;
+      width: 25%;
+      padding: 20px;
+      background-color: #7fafad;
+      height: 40vh;
+      border-radius: 10px;
+    }
+
+    input {
+      height: 40px;
+      width: 100%;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Log-In</h1>
+  <div class="login-container">
+    <%= form_tag "/login" do %>
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control" placeholder="Email">
+      </div>
+
+      <div class="mb-3">
+        <input type="password" name="password" class="form-control" placeholder="Password">
+      </div>
+
+      <input type="submit" value="Submit" name="submit" class="btn btn-primary">
+    <% end %>
+  </div>
+</body>
+</html>

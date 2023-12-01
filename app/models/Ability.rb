@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
 
     puts "User role: #{user.usertype}"
-
+# hello
     if user.admin?
       can :manage, :all
     elsif user.manager?

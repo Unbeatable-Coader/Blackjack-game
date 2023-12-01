@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  enum usertype: [:employee, :manager, :admin]
+  rolify
+
   has_secure_password
 
   has_many :tasks

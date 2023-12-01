@@ -2,15 +2,17 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    @user = user || Admin.new || Manager.new || Employee.new
+    user ||= User.new
 
-    if @user.has_role?(:Admin)
+    puts "User role: #{user.usertype}"
+
+    if user.admin?
       can :manage, :all
-    elsif @user.has_role?(:Manager)
-      can :manage, Task, manager_id: @user.id
-      can :update, Task, status: 'In Review', manager_id: @user.id
-    elsif @user.has_role?(:Employee)
-      can [:read], Task, user_id: @user.id
+    elsif user.manager?
+      can :manage, Task, manager_id: user.id
+      can :read, Task, user_id: user.id
+    else
+      can :read, Task, user_id: user.id
     end
   end
 end

@@ -16,8 +16,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    
+    @ability = Ability.new(current_user)
     @task = current_user.tasks.build(task_params)
+    puts "task = #{@task}"
 
     if @task.save
       redirect_to @task, notice: 'Task was successfully created.'
